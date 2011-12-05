@@ -1,8 +1,81 @@
 -content_for :title do
  title Test Page!
 
-h1 Welcome
-a href='test.html' Test
-ul
-  - 5.times do |num|
-    li Count #{num}
+div id='container'
+  div id='toolBarLeft'
+  div id='toolBarRight'
+  ul id='leftNav'
+  
+   li id='Channels' class='category' 
+     a href='#' Channels
+
+   li class='app'
+     div class='appImage' id='EmailStudio-nav'
+       a href='#' Email
+
+   li class='app'
+     div class='appImage' id='SocialEngage-nav'
+       a href='#' Social
+
+   li class='app' 
+     div class='appImage' id='MobileConnect-nav'
+       a href='#' Mobile 
+
+   li class='app'
+     div class='appImage' id='PageDesigner-nav'
+       a href='#' Sites
+
+   li id='HubTools' class='category' 
+     a href='#' Hub Tools 
+
+   li class='app'
+     div class='appImage' id='Campaigns-nav'
+       a href='#' Campaigns
+  
+   li class='app'
+     div class='appImage' id='Reports-nav'
+       a href='#' Reports
+
+   li class='app'
+     div class='appImage' id='Assets-nav'
+       a href='#' Assets  
+ 
+   li class='app'
+     div class='appImage' id='Contacts-nav'
+       a href='#' Contacts 
+ 
+   li id='HubApps' class='categoryClosed'
+     a href='#' Hub Apps 
+  
+     ul class='flyout'
+    
+       li class='app'
+         div class='appImage' id='Audience-nav'
+           a href='#'  Audience
+  
+       li class='app'
+         div class='appImage' id='Automation-nav'
+           a href='#' Automations
+ 
+   li id='Partner' class='categoryClosed' 
+     a href='#' Partner Apps
+
+     ul class='flyout'
+ 
+       li class='app'
+         div class='appImage' id='Marketo-nav'
+           a href='#' Marketo
+
+       li class='app'
+         div class='appImage' id='Klout-nav'
+           a href='#' Klout
+ 
+       li class='app'
+         div class='appImage' id='Netbase-nav' 
+           a href='#' Netbase
+
+   li id='bottom-nav'
+
+div id='calendar'
+div id='pulse'
+div id='campaign'

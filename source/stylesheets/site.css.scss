@@ -1,32 +1,178 @@
 @import "compass";
 
-$link-color:         #0388a6;
-$link-hover-color:   #009ce0;
-$link-focus-color:   false;
-$link-active-color:  false;
-$link-visited-color: false;
+body {background:#fff; margin:0; padding:0}
 
-$font-color:  #2a2a2a;
-$font-family: sans-serif;
-$base-font-size:   12px;
-$base-line-height: 18px;
 
-$total-cols: 12;
-$col-width: 4em;
-$gutter-width: 1em;
-$side-gutter-width: $gutter-width;
-
-@include global-reset;
-
-body {
-  font-family: $font-family;
-  color: $font-color; 
+#container {display:block; outline:none; width:1280px;height:760px; margin:0;}
+    
+#toolBarLeft {
+  display:block;
+  outline:none;
+  float:left;
+  position:absolute;
+  width:220px;height:40px;
+  background:transparent url(../images/toolBarLeft.jpg) no-repeat 0 0;
+  margin:0 0 0 0;
+  z-index:1000;
 }
 
-a {
-  @include link-colors($link-color, $link-hover-color, $link-focus-color, $link-active-color, $link-visited-color);
+    
+#toolBarRight {
+  display:block;
+  outline:none;
+  position:absolute;
+  left: 220px;
+  width:1030px;height:40px;
+  background:transparent url(../images/toolBarRight.jpg) no-repeat 0 0;
+  margin:0 0px 0 0;
 }
 
-#main {
-  padding: 50px;
+#calendar {
+ display:block;
+ outline:none;
+ position:absolute;
+ left: 220px;
+ top: 40px;
+ width:1030px;height:165px;
+ background:transparent url(../images/calendar.jpg) no-repeat 0 0;
+ margin:0 0 0 0;
+}
+    
+#pulse {
+ display:block;
+ outline:none;
+ position:absolute;
+ left: 220px;
+ top: 205px;
+ width:1030px;height:280px;
+ background:transparent url(../images/pulse.jpg) no-repeat 0 0;
+ margin:0 0 0 0;
+}
+    
+#campaign {
+ display:block;
+ outline:none;
+ position:absolute;
+ left: 220px;
+ top: 485px;
+ width:1030px;height:280px;
+ background:transparent url(../images/campaign.jpg) no-repeat 0 0;
+ margin:0 0 0 0;
+}
+
+@mixin category-default {
+  display:block;
+  width:192px; height:19px;
+  background:transparent url(../images/categoryOpen.png) no-repeat 0 0;
+  position:relative;
+  left:-9px;
+  font-size:8pt;
+}
+
+a {text-decoration:none; color:#999999}
+
+#leftNav {
+  position:absolute;
+  top: 40px;
+  left:-20px;
+  margin:0 0 0 0;
+  font-family:arial;
+  font-size:8pt;
+  color:#999999;
+  z-index:500;
+
+  li {
+    outline:none;
+
+    &.category {
+      @include category-default;
+      background:transparent url(../images/categoryOpen.png) no-repeat 0 0;    
+      &:hover {background-position:-192px 0px}
+      a {position:relative; left:18px; top:4px;
+        &:hover {color:#333333;}
+      }    
+    }
+
+    &.categoryClosed {
+      @include category-default;
+      background:transparent url(../images/categoryClosed.png) no-repeat 0 0;    
+      &:hover {background-position:-192px 0px}
+      a {position:relative; left:18px; top:4px;
+        &:hover {color:#333333;}
+      }    
+    }
+   
+    .flyout {
+      display:block;
+      position:relative;
+      left:0; top:-20px;
+      z-index: -200;
+      opacity: 0;
+      margin:0 0 0 0;
+      padding:0;
+      visibility:hidden;
+
+      a {
+        position:relative;
+        left:28px;
+        top:3px;
+        width:183px; height:30px;
+      }
+    }
+  } 
+  .app {
+    display:block;
+    outline:none;
+    width:183px; height:30px;
+    background:transparent url(../images/appHover.png) no-repeat 0 0;
+    margin:0;
+    font-size:10pt;      
+  
+    &:hover {
+      display:block;
+      background-position:-183px 0px; 
+      cursor:pointer;
+      a {color:#333}
+    } 
+
+    a {
+      position:relative;
+      left:28px;
+      top:3px;
+      width:183px; height:30px;
+      word-wrap: normal;
+    }
+
+    .appImage {
+      display:block;
+      width: 24px; height:24px;
+      background-position:-24px 0px;
+      position:relative;
+      left:7px; top:3px;
+
+      &:hover {background-position:0px 0px;}
+
+      &#EmailStudio-nav {background:transparent url(../images/apps/email_hover.png) no-repeat -24px 0}
+      &#SocialEngage-nav {background:transparent url(../images/apps/social_hover.png) no-repeat -24px 0;}
+      &#MobileConnect-nav {background:transparent url(../images/apps/mobile_hover.png) no-repeat -24px 0;}
+      &#PageDesigner-nav {background:transparent url(../images/apps/sites_hover.png) no-repeat -24px 0;}
+      &#Campaigns-nav {background:transparent url(../images/apps/campaigns_hover.png) no-repeat -24px 0;}
+      &#Reports-nav {background:transparent url(../images/apps/reports_hover.png) no-repeat -24px 0;}
+      &#Assets-nav {background:transparent url(../images/apps/assets_hover.png) no-repeat -24px 0;}
+      &#Contacts-nav {background:transparent url(..images/apps/contacts_hover.png) no-repeat -24px 0;}
+      &#Audience-nav {background:transparent url(../images/apps/audienceBuilder_hover.png) no-repeat -24px 0;}
+      &#Automations-nav {background:transparent url(../images/apps/reports_hover.png) no-repeat -24px 0;}
+      &#Marketo-nav {background:transparent url(../images/apps/marketo_hover.png) no-repeat -24px 0;}
+      &#Klout-nav {background:transparent url(../images/apps/klout_hover.png) no-repeat -24px 0;}
+      &#Netbase-nav {background:transparent url(../images/apps/netbase_hover.png) no-repeat -24px 0;}
+    }
+  }
+  
+  #bottom-nav {
+   height:12px;
+   display:block;
+   background:transparent url(../images/appHover.png) no-repeat 0 0;
+   width:184px;
+  }
+
 }
